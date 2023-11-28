@@ -1,7 +1,11 @@
-const { Then } = require('@badeball/cypress-cucumber-preprocessor')
+
+const {  Then } = require('@badeball/cypress-cucumber-preprocessor')
 const TGDynamicTables = require('../../pages/TGDynamicTables')
 
+
 const dynamicTables = new TGDynamicTables()
+
+
 
 Then(/^the user enters the following inputs$/, (dataTable) => {
 
@@ -9,6 +13,8 @@ Then(/^the user enters the following inputs$/, (dataTable) => {
 	dynamicTables.getPopupInputs().each((el,index) => {
 		cy.wrap(el).type(arr[index])
 	})
+
+
 })
 
 
@@ -24,4 +30,8 @@ Then(/^the user should see the table with the new row below$/, (dataTable) => {
     dynamicTables.getLastRow().each((el, index) =>  {
         cy.wrap(el).should('have.text',row[index])
     })
+
+
+
 })
+
