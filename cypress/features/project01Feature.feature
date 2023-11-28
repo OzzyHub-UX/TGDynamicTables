@@ -18,7 +18,6 @@ Feature: Dynamic Tables
         And the user should see the "Total = $2,300" text displayed
 
 
-
     Scenario: Validate the Add New Product modal
 
         When the user clicks on the "ADD PRODUCT" button
